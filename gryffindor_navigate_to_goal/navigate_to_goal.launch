@@ -1,0 +1,11 @@
+<launch>
+	
+	<!--including existing launch file-->
+	<include file="$(find turtlebot3_bringup)/launch/turtlebot3_robot.launch"/>
+
+	<!--creating python script based nodes-->
+	<node pkg="gryffindor_navigate_to_goal" type="getObjectRange.py" name="getObjectRange" output="screen"/>
+	<node pkg="gryffindor_navigate_to_goal" type="goToGoal.py" name="goToGoal" output="screen" args="$(arg my_args)"/>
+	
+    
+</launch>
